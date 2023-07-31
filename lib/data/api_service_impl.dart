@@ -3,6 +3,7 @@ import 'package:ticket_booking_app/core/api/api_service.dart';
 import 'package:ticket_booking_app/data/api_client_impl.dart';
 import 'package:ticket_booking_app/model/cast_model.dart';
 import 'package:ticket_booking_app/model/person_details.dart';
+import 'package:ticket_booking_app/model/tv_model.dart';
 
 import '../core/api/api_client.dart';
 import '../model/movie_model.dart';
@@ -150,7 +151,7 @@ class ApiServiceImpl extends ApiService {
   }
 
   @override
-  Future<BuiltList<MovieModel>> getTvCredits(int id) async {
+  Future<BuiltList<TvModel>> getTvCredits(int id) async {
     try {
       final response =
           await _httpClient.get(url.tvCredits(id).getUri, headers: {
@@ -158,9 +159,9 @@ class ApiServiceImpl extends ApiService {
       });
       if (response.isSuccess) {
         final List results = response.jsonMap!['cast'] as List;
-        List<MovieModel> tvShows = [];
+        List<TvModel> tvShows = [];
         for (final i in results) {
-          tvShows.add(MovieModel.fromJson(i));
+          tvShows.add(TvModel.fromJson(i));
         }
         return tvShows.toBuiltList();
       } else {

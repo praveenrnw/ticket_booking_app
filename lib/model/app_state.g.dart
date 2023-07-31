@@ -71,7 +71,7 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
         ..add('personTvShows')
         ..add(serializers.serialize(value,
             specifiedType:
-                const FullType(BuiltList, const [const FullType(MovieModel)])));
+                const FullType(BuiltList, const [const FullType(TvModel)])));
     }
     value = object.count;
     if (value != null) {
@@ -128,7 +128,7 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
         case 'personTvShows':
           result.personTvShows.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(MovieModel)]))!
+                      BuiltList, const [const FullType(TvModel)]))!
               as BuiltList<Object?>);
           break;
         case 'count':
@@ -156,7 +156,7 @@ class _$AppState extends AppState {
   @override
   final BuiltList<MovieModel>? personMovies;
   @override
-  final BuiltList<MovieModel>? personTvShows;
+  final BuiltList<TvModel>? personTvShows;
   @override
   final int? count;
 
@@ -263,10 +263,10 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   set personMovies(ListBuilder<MovieModel>? personMovies) =>
       _$this._personMovies = personMovies;
 
-  ListBuilder<MovieModel>? _personTvShows;
-  ListBuilder<MovieModel> get personTvShows =>
-      _$this._personTvShows ??= new ListBuilder<MovieModel>();
-  set personTvShows(ListBuilder<MovieModel>? personTvShows) =>
+  ListBuilder<TvModel>? _personTvShows;
+  ListBuilder<TvModel> get personTvShows =>
+      _$this._personTvShows ??= new ListBuilder<TvModel>();
+  set personTvShows(ListBuilder<TvModel>? personTvShows) =>
       _$this._personTvShows = personTvShows;
 
   int? _count;

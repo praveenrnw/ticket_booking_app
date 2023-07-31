@@ -4,6 +4,7 @@ import 'package:built_value/serializer.dart';
 import 'package:ticket_booking_app/model/cast_model.dart';
 import 'package:ticket_booking_app/model/movie_model.dart';
 import 'package:ticket_booking_app/model/person_details.dart';
+import 'package:ticket_booking_app/model/tv_model.dart';
 import 'serializers.dart';
 
 part 'app_state.g.dart';
@@ -34,7 +35,7 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
   CastModel? get castDetails;
   PersonDetails? get personDetails;
   BuiltList<MovieModel>? get personMovies;
-  BuiltList<MovieModel>? get personTvShows;
+  BuiltList<TvModel>? get personTvShows;
 
   int? get count;
 }

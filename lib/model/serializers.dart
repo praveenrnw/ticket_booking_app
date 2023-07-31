@@ -7,6 +7,7 @@ import 'package:ticket_booking_app/model/cast_list_model.dart';
 import 'package:ticket_booking_app/model/cast_model.dart';
 import 'package:ticket_booking_app/model/movie_model.dart';
 import 'package:ticket_booking_app/model/person_details.dart';
+import 'package:ticket_booking_app/model/tv_model.dart';
 
 import 'app_state.dart';
 
@@ -18,6 +19,7 @@ part 'serializers.g.dart';
   CastModel,
   CastListModel,
   PersonDetails,
+  TvModel,
 ])
 final Serializers serializers =
     (_$serializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();

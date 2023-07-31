@@ -1,8 +1,6 @@
 import 'package:ticket_booking_app/model/person_details.dart';
 import 'package:ticket_booking_app/ui.dart';
 import 'package:ticket_booking_app/views/tabs/movies_tab.dart';
-import 'package:ticket_booking_app/views/tabs/tab01.dart';
-import 'package:ticket_booking_app/views/tabs/tab02.dart';
 import 'package:ticket_booking_app/views/tabs/tv_shows_tab.dart';
 
 class CastPage extends StatefulWidget {

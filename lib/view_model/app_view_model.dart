@@ -6,6 +6,7 @@ import 'package:ticket_booking_app/data/api_service_impl.dart';
 import 'package:ticket_booking_app/model/cast_model.dart';
 import 'package:ticket_booking_app/model/movie_model.dart';
 import 'package:ticket_booking_app/model/person_details.dart';
+import 'package:ticket_booking_app/model/tv_model.dart';
 
 import '../core/view_model/view_model.dart';
 import '../model/app_state.dart';
@@ -74,7 +75,7 @@ class AppViewModel extends AppStateNotifier<AppState>
   }
 
   Future<void> getPersonTvShows(int id) async {
-    final BuiltList<MovieModel> tvShows = await apiService.getTvCredits(id);
+    final BuiltList<TvModel> tvShows = await apiService.getTvCredits(id);
     state = state.rebuild((p0) => p0.personTvShows = tvShows.toBuilder());
   }
 }

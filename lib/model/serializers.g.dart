@@ -12,6 +12,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CastModel.serializer)
       ..add(MovieModel.serializer)
       ..add(PersonDetails.serializer)
+      ..add(TvModel.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(CastListModel)]),
           () => new ListBuilder<CastListModel>())
@@ -28,8 +29,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(MovieModel)]),
           () => new ListBuilder<MovieModel>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(MovieModel)]),
-          () => new ListBuilder<MovieModel>()))
+          const FullType(BuiltList, const [const FullType(TvModel)]),
+          () => new ListBuilder<TvModel>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

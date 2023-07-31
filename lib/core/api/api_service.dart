@@ -1,4 +1,5 @@
 import 'package:built_collection/built_collection.dart';
+import 'package:ticket_booking_app/model/tv_model.dart';
 
 import '../../model/cast_model.dart';
 import '../../model/movie_model.dart';
@@ -11,5 +12,5 @@ abstract class ApiService {
   Future<CastModel> getCastDetails(int id);
   Future<PersonDetails> getPersonDetails(int id);
   Future<BuiltList<MovieModel>> getMovieCredits(int id);
-  Future<BuiltList<MovieModel>> getTvCredits(int id);
+  Future<BuiltList<TvModel>> getTvCredits(int id);
 }
